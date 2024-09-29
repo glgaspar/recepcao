@@ -1,0 +1,41 @@
+{{ block "index" . }}
+    <!DOCTYPE htnml>
+    <html>
+        <head>
+            <title></title>
+            <meta charset="UTF-8" />
+            <meta nam="viewport" content="width=device-width, initial-scale=1" />
+            <link href="css/styles.css" rel="stylesheet">
+            <link
+                href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+                rel="stylesheet"
+            />
+            <script src="https://unpkg.com/htmx.org"></script>
+        </head>
+        <body>
+            <div class="w-[100vw] h-[100vh] bg-[#234779]">
+                <div class="m-2">
+                    <p class="text-center m-5">Apps Abertos</p>
+                    {{ template "list" . }}
+                </div>
+            </div>
+        </body>
+    </html>
+{{ end }} 
+
+{{ block "list" . }}
+    <div class="m-2">
+        {{ range .Apps }}
+            <div class="h-[6-rem] w-[6-rem] border border-solid border-whitesmoke border-radius-lg p-3">
+                <a href={{ .Path }}>
+                    <div class="is-relative">
+                        <figure class="b-image-wrapper is-64x64 image start">
+                            <img src={{ .Img }} loading="lazy" class="" width="64" />
+                        </figure>
+                    </div>
+                    <p class="text-center m-2">{{ .Name }}</p>
+                </a>
+            </div>
+        {{ end }}
+    </div>
+{{ end }}
