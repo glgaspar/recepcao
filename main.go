@@ -60,7 +60,8 @@ func main() {
 
 	var data = AppList{}
 	data.Generate()
-
+	
+	e.Static("/dist", "dist")
 	e.Renderer = newTemplate()
 
 	e.GET("/", func(c echo.Context) error {
