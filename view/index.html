@@ -1,23 +1,29 @@
 {{ block "index" . }}
     <!DOCTYPE htnml>
-    <html>
+    <html lang="pt-br">
         <head>
-            <title></title>
+            <title>Recepção</title>
             <meta charset="UTF-8" />
-            <meta nam="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="stylesheet" href="/dist/tailwind.css" />
             <script src="https://unpkg.com/htmx.org"></script>
         </head>
-        <body>
-            <div class="w-[100vw] h-[100vh] bg-[#234779]">
-                <div class="m-2">
-                    <p class="text-center m-5">Apps Abertos</p>
-                    {{ template "list" . }}
-                </div>
-            </div>
+        <body class="bg-[#5b5a57] text-white">
+            {{ template "body" .}}
         </body>
     </html>
 {{ end }} 
+
+{{ block "body" . }}
+<div class="">
+    <div class="m-2">
+        <p class="text-center m-5">Apps Abertos</p>
+        <div>
+            {{ template "list" . }}
+        </div>
+    </div>
+</div>
+{{ end }}
 
 {{ block "list" . }}
     <div class="m-2">
