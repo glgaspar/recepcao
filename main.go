@@ -60,12 +60,12 @@ func main() {
 
 	var data = AppList{}
 	data.Generate()
-	
+
 	e.Static("/dist", "dist")
 	e.Renderer = newTemplate()
 
 	e.GET("/", func(c echo.Context) error {
-		return c.Render(200, "list", data)
+		return c.Render(200, "index", data)
 	})
 
 	e.Logger.Fatal(e.Start(":42069"))
