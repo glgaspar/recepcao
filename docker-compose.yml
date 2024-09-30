@@ -1,0 +1,14 @@
+services:
+  server:
+    restart: always  
+    container_name: recepcao
+    build:
+      context: .
+    ports:
+      - 42069:42069
+    healthcheck:
+      test: curl --fail http://localhost:42069 || exit 1
+      interval: 10m
+      timeout: 30s
+      retries: 5
+      start_period: 30s
