@@ -9,35 +9,53 @@
             <script src="https://unpkg.com/htmx.org"></script>
         </head>
         <body class="bg-[#5b5a57] text-white">
-            {{ template "body" .}}
+            {{ template "body" . }}
         </body>
     </html>
 {{ end }} 
 
 {{ block "body" . }}
-<div class="">
-    <div class="m-2">
-        <p class="text-center m-5">Apps Abertos</p>
-        <div>
-            {{ template "list" . }}
+    <div class="">
+        <div class="m-auto w-[75vw]">
+            {{ template "apps" . }}
+            {{ template "config" . }}
         </div>
     </div>
-</div>
 {{ end }}
 
-{{ block "list" . }}
-    <div class="m-2">
-        {{ range .Apps }}
-            <div class="h-[6-rem] w-[6-rem] border border-solid border-whitesmoke border-radius-lg p-3">
-                <a href={{ .Path }}>
-                    <div class="is-relative">
-                        <figure class="b-image-wrapper is-64x64 image start">
-                            <img src={{ .Img }} loading="lazy" class="" width="64" />
-                        </figure>
-                    </div>
-                    <p class="text-center m-2">{{ .Name }}</p>
-                </a>
+{{ block "apps" . }}
+    <div>
+        <p class="text-center m-5">Apps</p>
+        <hr class="" />
+        <div class="m-2 flex flex-row flex-wrap grow gap-5 justify-center">
+            {{ range .Apps }}
+                {{ template "card" . }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+
+{{ block "config" . }}
+    <div>
+        <p class="text-center m-5">Setup</p>
+        <hr class="" />
+        <div class="m-2 flex flex-row flex-wrap grow gap-5 justify-center">
+            {{ range .Config }}
+                {{ template "card" . }}
+            {{ end }}
+        </div>
+    </div>
+{{ end }}
+
+{{ block "card" . }}
+    <div class="w-32 border border-solid border-whitesmoke rounded-xl p-3 m-1">
+        <a href='{{ .Path }}' target="_blank">
+            <div class="is-relative">
+                <figure class="b-image-wrapper is-64x64">
+                    <img src='{{ .Img }}' loading="lazy" class="m-auto" width="64" />
+                </figure>
             </div>
-        {{ end }}
+            <p class="text-center mt-2">{{ .Name }}</p>
+        </a>
     </div>
 {{ end }}
