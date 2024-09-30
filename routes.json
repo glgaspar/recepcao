@@ -1,0 +1,36 @@
+{
+	"Apps": [
+		{
+			"Img": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Jellyfin/icon.png",
+			"Name": "JellyFin",
+			"Path": "/jelly"
+		}
+	],
+	"Config": [
+		{
+			"Img": "https://styles.redditmedia.com/t5_5ty02o/styles/communityIcon_jpfthr3t5hdc1.jpg?format=pjpg&s=9d7dfaa0b79ea070c669c6c1119fe42cf4608f9f",
+			"Name": "CasaOS",
+			"Path": "/admin"
+		},
+		{
+			"Img": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Prowlarr/icon.png",
+			"Name": "Prowlarr",
+			"Path": "/prowlarr"
+		},
+		{
+			"Img": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/NginxProxyManager/icon.png",
+			"Name": "Nginx",
+			"Path": "https://nginx.pessimaideia.com/"
+		},
+		{
+			"Img": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Radarr/icon.png",
+			"Name": "Radarr",
+			"Path": "/radarr"
+		},
+		{
+			"Img": "https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/Sonarr/icon.png",
+			"Name": "Sonarr",
+			"Path": "/sonarr"
+		}
+	]
+}
